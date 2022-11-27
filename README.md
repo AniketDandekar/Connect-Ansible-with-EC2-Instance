@@ -19,7 +19,6 @@ Step 2: remove read permission of (group user + other user) from the key
 Step 3: Setup inventory where you installed Ansible
 ```
 [ ]# vi /etc/ansible/hosts
-[aws]
 ec2_public_ip ansible_user=ec2-user ansible_ssh_private_key_file=/root/Downloads/private_key.pem
 
 ```
@@ -43,10 +42,10 @@ become_ask_pass=False
 ```
 
 Note:
--become=True            <---- means i want to use become concept of becoming some other user.
-*become_method=sudo     <---- i want to become some other user to gain extra power to run cmd's by using "sudo"
-+become_user=root       <---- i want to become "root" user, you can change user name also as required.
--become_ask_pass=False  <---- means dont ask password to run cmd's after becoming some other user
+1. become=True            <---- means i want to use become concept of becoming some other user.
+2. become_method=sudo     <---- i want to become some other user to gain extra power to run cmd's by using "sudo"
+3. become_user=root       <---- i want to become "root" user, you can change user name also as required.
+4. become_ask_pass=False  <---- means dont ask password to run cmd's after becoming some other user
                               to work this option need to setup inventory.
 
 -----------------------------------------------------------------------------------------------------------------------------
