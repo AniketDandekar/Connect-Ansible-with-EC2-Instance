@@ -19,10 +19,9 @@ Step 2: remove read permission of (group user + other user) from the key
 Step 3: Setup inventory where you installed Ansible
 ```
 [ ]# vi /etc/ansible/hosts
+[aws]
 ec2_public_ip ansible_user=ec2-user ansible_ssh_private_key_file=/root/Downloads/private_key.pem
 
-:wq
-[ ]#
 ```
 Note: /root/Downloads/private_key.pem == paste the path of "private key"
 
@@ -40,7 +39,6 @@ become_method=sudo
 become_user=root
 become_ask_pass=False
 
-:wq
 [ ]#
 ```
 
@@ -50,7 +48,11 @@ Note:
 3] become_user=root       <---- i want to become "root" user, you can change user name also as required.
 4] become_ask_pass=False  <---- means dont ask password to run cmd's after becoming some other user
                                 to work this option need to setup inventory.
-				
+
+-----------------------------------------------------------------------------------------------------------------------------
+Step 5: Now create any playbook or run any ad-hoc cmd it will run in the ec2 instance.
+
+
 -----------------------------------------------------------------------------------------------------------------------------
 That's all..!
           
