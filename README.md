@@ -6,6 +6,8 @@ create a private key with "key Pairs" feature,
 or while creating ec2 instance on AWS at the end of instance creating process aws ask 
 to download the private key, with help of this key we can connect with instance.
 
+Till here you launched your ec2 instance.
+
 -----------------------------------------------------------------------------------
 Step 2: remove read permission of (group user + other user) from the key
 ```	
