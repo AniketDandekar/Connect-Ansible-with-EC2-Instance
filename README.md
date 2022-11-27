@@ -10,6 +10,7 @@ to download the private key, with help of this key we can connect with instance.
 Step 2: remove read permission of (group user + other user) from the key
 ```	
 [ ]# chmod g-r key_filename.pem
+
 [ ]# chmod o-r key_filename.pem
 ```
 -----------------------------------------------------------------------------------
