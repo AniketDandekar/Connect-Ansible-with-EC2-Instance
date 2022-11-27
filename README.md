@@ -9,17 +9,17 @@ to download the private key, with help of this key we can connect with instance.
 -----------------------------------------------------------------------------------
 Step 2: remove read permission of (group user + other user) from the key
 	
-[ ]# chmod g-r key_filename.pem
-[ ]# chmod o-r key_filename.pem
+`[ ]# chmod g-r key_filename.pem`
+`[ ]# chmod o-r key_filename.pem`
 
 -----------------------------------------------------------------------------------
 Step 3: Setup inventory where you installed Ansible
 
-[ ]# vi /etc/ansible/hosts
-ec2_public_ip ansible_user=ec2-user ansible_ssh_private_key_file=/root/Downloads/private_key.pem
-
-:wq
-[ ]#
+`[ ]# vi /etc/ansible/hosts`
+`ec2_public_ip ansible_user=ec2-user ansible_ssh_private_key_file=/root/Downloads/private_key.pem`
+``
+`:wq`
+`[ ]#`
 
 Note: /root/Downloads/private_key.pem == paste the path of "private key"
 
@@ -27,18 +27,18 @@ Note: /root/Downloads/private_key.pem == paste the path of "private key"
 Step 4: setup privilege_escalation in controlled node so we can run cmds with
 	      "sudo" power behind the sence by Ansible in ec2 instance.
 
-[ ]# vi /etc/ansible/ansible.cfg
+`[ ]# vi /etc/ansible/ansible.cfg`
 	
-# host_key_checking=False
+`# host_key_checking=False`
 	
-[privilege_escalation]
-become=True      
-become_method=sudo
-become_user=root
-become_ask_pass=False
-
-:wq
-[ ]# 
+`[privilege_escalation]`
+`become=True`      
+`become_method=sudo`
+`become_user=root`
+`become_ask_pass=False`
+``
+`:wq`
+`[ ]#` 
 
 
 Note:
