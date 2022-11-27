@@ -42,11 +42,11 @@ become_ask_pass=False
 ```
 
 Note:
-1. become=True            <---- means i want to use become concept of becoming some other user.
-2. become_method=sudo     <---- i want to become some other user to gain extra power to run cmd's by using "sudo"
-3. become_user=root       <---- i want to become "root" user, you can change user name also as required.
-4. become_ask_pass=False  <---- means dont ask password to run cmd's after becoming some other user
-                              to work this option need to setup inventory.
+1. become=True             <---- means i want to use become concept of becoming some other user.
+2. become_method=sudo      <---- i want to become some other user to gain extra power to run cmd's by using "sudo"
+3. become_user=root        <---- i want to become "root" user, you can change user name also as required.
+4. become_ask_pass=False   <---- means dont ask password to run cmd's after becoming some other user 
+                                 to work this option need to setup inventory.
 
 -----------------------------------------------------------------------------------------------------------------------------
 Step 5: Now create any playbook or run any ad-hoc cmd it will run in the ec2 instance.
