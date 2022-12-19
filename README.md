@@ -19,14 +19,15 @@ Step 2: remove read permission of (group user + other user) from the key
 Step 3: Setup inventory where you installed Ansible
 ```
 [ ]# vi /etc/ansible/hosts
-ec2_public_ip ansible_user=ec2-user ansible_ssh_private_key_file=/root/Downloads/private_key.pem
+
+ec2_ip ansible_user=ec2-user ansible_ssh_private_key_file=/root/Downloads/private_key.pem
 
 ```
-Note: /root/Downloads/private_key.pem == paste the path of "private key"
+Note: /root/Downloads/private_key.pem <--- path of "private key"
 
 -----------------------------------------------------------------------------------
 Step 4: setup privilege_escalation in controlled node so we can run cmds with
-	      "sudo" power behind the sence by Ansible in ec2 instance.
+	"sudo" power behind the sence by Ansible in ec2 instance.
 ```
 [ ]# vi /etc/ansible/ansible.cfg
 	
@@ -46,7 +47,7 @@ Note:
 2. become_method=sudo      <---- i want to become some other user to gain extra power to run cmd's by using "sudo"
 3. become_user=root        <---- i want to become "root" user, you can change user name also as required.
 4. become_ask_pass=False   <---- means dont ask password to run cmd's after becoming some other user 
-                                 to work this option need to setup                                                              inventory.
+                                 to work this option need to setup inventory.
 
 -----------------------------------------------------------------------------------------------------------------------------
 Step 5: Now create any playbook or run any ad-hoc cmd it will run in the ec2 instance.
